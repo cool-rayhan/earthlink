@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>PHOTONIC</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="MAIN%20LOGO.ico" type="image/x-icon">
+    <link rel="icon" href="MAIN%20LOGO.ico" type="image/x-icon">
+    <style>
+     /* Container for the tile module */
+        .module-container {
+            position: relative;
+            z-index: 1; /* Ensure it is above other content */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Fullscreen Video Background */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(50%);
+            z-index: -1;
+        }
+
+        /* Tile Container */
+        .tile-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Individual Tile Styles */
+        .tile {
+            background: rgba(102, 102, 102, 0.78);
+            border-radius: 10px;
+            margin: 15px;
+            width: 250px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            color: #eee9e9;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Icon Styles */
+        .tile i {
+            font-size: 3.5rem;
+            margin-bottom: -27px;
+            color: aquamarine
+        }
+
+        /* Tile Title */
+        .tile h3 {
+            font-family: a;
+            font-size: 2rem;
+            text-align: center;
+            letter-spacing: 1px;
+            color: aliceblue;
+        }
+
+        /* Hover Detail Box */
+        .tile:hover .detail-box {
+            display: block;
+        }
+
+        /* Hidden Detail Box */
+        .detail-box {
+            display: none;
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            border-radius: 0 0 10px 10px;
+        }
+
+/* Slider container */
+
+
+.slider {
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* 100% for each image */
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        
+        .logo {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it appears above the slides */
+}
+
+    
+    </style>
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <img src="BBFAsset%202xxxhdpi.png" alt="Homepage">
+            </a>
+        </div>
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+                
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">HOME</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">EXPLORE THE MAP</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">SEE THE CONNECTIONS</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">REAL-TIME EARTH DATA</a></li>
+                    <li><a class="smoothscroll"  href="#works" title="works">SIMULATE CHANGES</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">LEARN ABOUT EARTH</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">CLIMATE IMPACT</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">TAKE THE CHALLENGE</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">NASA DATA HUB</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">GET INVOLVED</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">ABOUT EARTHLINK</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">ABOUT TEAM PHOTONIC</a></li>
+                </ul>
+    
+                
+              
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h3>Welcome to EARTHLINK</h3>
+
+                <h1>
+                    "One world, countless connections."<br>
+By understanding Earth's systems, we can create a future where every action counts toward sustainability.
+                </h1>
+
+                <div class="home-content__buttons">
+                    <a href="#contact" class="smoothscroll btn btn--stroke">
+                        About this Project
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        More About Us
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+
+    
+        <!-- end home-social -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Hello There</h3>
+                <h1 class="display-1 display-1--light">What is EARTHLINK</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                Our Earth is a complex system of interconnected environmental processes, where changes in one aspect of the environment can lead to cascading effects throughout the planet. Our web app, EarthLink, aims to raise awareness of this interconnectedness by offering users a real-time, interactive visualization of Earth's systems and how human activities—particularly climate change—disrupt this delicate balance.
+EarthLink will enable users simulate climate change scenarios, and visualize how shifts in one system, such as rising CO₂ levels or deforestation, can have wide-ranging impacts on other systems, such as air quality, weather patterns, and biodiversity. Our app will provide both a global view and localized insights to help users understand the interconnected effects of environmental change.
+
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+                
+            <div class="col-block stats__col ">
+                <div class="stats__count">20</div>
+                <h5>MAP EVENTS</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">15</div>
+                <h5>VIDEO CONTENTS </h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">10</div>
+                <h5>AUDIO CONTENT</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">66</div>
+                <h5>TREE PLANTED </h5> 
+            </div>
+
+        </div> <!-- end about-stats -->
+
+        <div class="about__line"></div>
+
+    </section> <!-- end s-about -->
+    
+    <!--=================================================
+========================options-->
+    
+    <section>
+    
+     <!-- Module Container -->
+    <div class="module-container">
+        <!-- Background Video -->
+        <video class="background-video" autoplay muted loop>
+            <source src="bg3.mp4" type="video/mp4">
+           
+        </video>
+
+        <!-- Tile Container -->
+        <div class="tile-container">
+            <a href="#explore-map" class="tile">
+                <i class="fas fa-globe"></i>
+                <h3>Explore the Map</h3>
+                <div class="detail-box">Discover Earth’s Systems</div>
+            </a>
+            <a href="#see-connections" class="tile">
+                <i class="fas fa-project-diagram"></i>
+                <h3>See the Connections</h3>
+                <div class="detail-box">Journey Through Earth’s Web</div>
+            </a>
+            <a href="#real-time-data" class="tile">
+                <i class="fas fa-chart-line"></i>
+                <h3>Real-Time Earth Data</h3>
+                <div class="detail-box">Track Planetary Changes</div>
+            </a>
+            <a href="#simulate-changes" class="tile">
+                <i class="fas fa-cogs"></i>
+                <h3>Simulate Changes</h3>
+                <div class="detail-box">Test Earth System Reactions</div>
+            </a>
+            <a href="#learn-about-earth" class="tile">
+                <i class="fas fa-book-open"></i>
+                <h3>Learn About Earth</h3>
+                <div class="detail-box">Understand How Our Planet Works</div>
+            </a>
+            <a href="#climate-impact" class="tile">
+                <i class="fas fa-temperature-high"></i>
+                <h3>Climate Impact</h3>
+                <div class="detail-box">See Climate Change in Action</div>
+            </a>
+            <a href="#take-the-challenge" class="tile">
+                <i class="fas fa-puzzle-piece"></i>
+                <h3>Take the Challenge</h3>
+                <div class="detail-box">Test Your Earth Knowledge</div>
+            </a>
+            <a href="#nasa-data-hub" class="tile">
+                <i class="fas fa-database"></i>
+                <h3>NASA Data Hub</h3>
+                <div class="detail-box">Access NASA’s Earth Data</div>
+            </a>
+            <a href="#get-involved" class="tile">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Get Involved</h3>
+                <div class="detail-box">Take Action for Our Planet</div>
+            </a>
+            
+        </div>
+    </div>
+
+    </section>
+
+
+    <!-- services
+   
+
+    </section> <!-- end s-services -->
+
+
+    <!-- works
+    ================================================== -->
+   
+
+
+    <!-- clients
+    ================================================== -->
+    <section id="clients" class="s-clients">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">EARTHLINK.</h3>
+                <h1 class="display-2">"Small changes in one part of the world create ripples across the globe."
+Let's embrace innovation to protect our interconnected Earth</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row clients-outer" data-aos="fade-up">
+            <div class="col-full">
+                <div class="clients">
+                    
+                    <a href="#0" title="" class="clients__slide"><img src="nassa.png" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="basis.jpg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="space_apps_003.png" /></a>
+                    
+                     
+                </div> <!-- end clients -->
+            </div> <!-- end col-full -->
+        </div> <!-- end clients-outer -->
+
+        <div class="row clients-testimonials" data-aos="fade-up">
+            <div class="col-full">
+                <div class="testimonials">
+
+                    <div class="testimonials__slide">
+
+                        <p>"Science meets imagination to reveal Earth's hidden harmony."
+Through technology and collaboration, we unlock the potential for a balanced, sustainable future.</p>
+
+                        
+
+                    </div>
+
+                    <div class="testimonials__slide">
+                        
+                        <p> "Our planet's story is told through its interconnected systems."
+Join us in using technology to write a new chapter of Earth’s care and preservation.</p>
+
+                        
+
+                    </div>
+
+                    <div class="testimonials__slide">
+                        
+                        <p>"When we see Earth as one, we can protect it as one."
+Harnessing data and innovation, we turn knowledge into action for a healthier, connected world.</p>
+
+                        
+                    </div>
+
+                </div><!-- end testimonials -->
+                
+            </div> <!-- end col-full -->
+        </div> <!-- end client-testimonials -->
+
+    </section> <!-- end s-clients -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+            
+            <div class="contact-primary">
+
+                <h3 class="h6">Send Us A Message</h3>
+
+                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Submit</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Us</h5>
+                        <p>
+                            UNIVERSITY OF BARISHAL<br>
+                            BARISHAL, BD<br>
+                            BANGLADESH 
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email Us At</h5>
+                        <p>
+                                info.photonic@gmail.com<br>
+                            
+                        </p>
+                    </div>
+
+
+                    
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+
+                <div><img src="BBFAsset%202xxxhdpi.png"></div>
+               EarthLink, <br> is the dedicated website for the "Imagine Connected Earth" project. It features interactive data visualizations and an engaging EarthLink Counter that dynamically tracks and displays key metrics and milestones. Designed with a user-friendly interface, EarthLink provides a comprehensive platform to explore and understand the interconnected systems of our planet, offering educational resources and real-time insights into environmental data.
+            </div>
+
+       
+
+        </div> <!-- end footer-main -->
+
+     
+
+    </footer> <!-- end footer -->
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
